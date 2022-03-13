@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบตรวจสอบ</title>
+  <link rel="stylesheet" href="{{ url_for('static',    filename='CSS/style.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="/index">
+            <h1><span>โ</span>รงพยาบาล <span>ข</span>อนแก่น</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li class="nav-item active"><a class="nav-link" href="/index" data-after="/Home">Home <span class="sr-only"></span></a></li>
+            <li class="nav-item active"><a class="nav-link" href="#services" data-after="/Service">Services</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/about" data-after="/About">About</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/contact" data-after="/Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+        <section id="select">
+            <div class="select container">
+                <div class="select-1">
+              <div style="padding:10px; border: 1px solid #eeeeee; background-color: #FAFFF5;">
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <h2>Select a file to upload</h2>
+    <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p>
+    {% if filename %}
+            <!-- <img src="/static/UPLOAD_IMAGE/{{filename}}" height="400px" width="400px"> -->
+            <img src="{{ url_for('display_image', filename=filename) }}" height="50px" width="50px">
+            <h3> Normal:  <i> {{result[0][1]}} </i></h3>
+            <h3> Lung cancer: <i> {{result[0][0]}} </i></h3>
+            <h3> Tuberculosis: <i>{{result[0][2]}}</i></h3>
+            <form action="/confirm">
+            <button type="submit">Next</button>
+          </form>
+    {% endif %}
+            
+                      
+                      
+    <form id="upload-form" method="post" action="Preupload" enctype="multipart/form-data">
+        <label for="file-picker" class="btn btn-lg btn-success">Select a file:</label>
+        <dl>
+            <p>
+                <input id="file-picker" type="file"  name="file" accept="image/*" multiple="true" autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <button type="submit" class="btn btn-info">submit</button>
+            <button type="reset" class="btn btn-info">cancel</button>
+            </p>    
+    </form>
+    
+
+    
+	<!-- Load TensorFlow.js
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.6.0/dist/tf.min.js"> 
+	</script>-->
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"> 
+	</script>
+</div>
+  
+</body>
+</html>
