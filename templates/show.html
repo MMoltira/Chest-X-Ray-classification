@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',    filename='CSS/style.css') }}">
+  <title>ระบบตรวจสอบ</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="/index">
+            <h1><span>โ</span>รงพยาบาล <span>ข</span>อนแก่น</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li class="nav-item active"><a class="nav-link" href="/index" data-after="/Home">Home <span class="sr-only"></span></a></li>
+            <li class="nav-item active"><a class="nav-link" href="#services" data-after="/Service">Services</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/about" data-after="/About">About</a></li>
+            <li class="nav-item active"><a class="nav-link" href="contact" data-after="/Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+  <head>
+    <style>
+      p.text1{
+        text-align: center;
+      }
+  div.show_con{
+    padding-top: 100px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+  }
+</style>
+</head>
+  
+<body>
+
+  <div class="show_con">
+    <p class="text1"><strong>ลำดับรายชื่อคนที่เข้าใช้ Webapp </strong></p>       
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Image_Predic</th>
+        <th>ชื่อ(ผู้เข้าใช้เว็บ)</th>
+            <th>นามสกุล(ผู้เข้าใช้เว็บ)</th>
+            <th>Confirm By</th>
+            <th>Interpretation</th>
+            <th>Comment/Suggestion</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for row in datas %}
+       <tr>
+           <td>{{row.0}}</td>
+           <td>{{row.1}}</td>
+           <td>{{row.2}}</td>
+           <td>{{row.3}}</td>
+           <td>{{row.4}}</td>
+           <td>{{row.5}}</td>
+
+       </tr>
+       {% endfor %} 
+
+    </tbody>
+   </table>
+</div>
+
+</body>
+</html>
+
+  <!--<div class="container">
+    <p>ลำดับรายชื่อคนที่เข้าใช้ Webapp</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ชื่อ</th>
+            <th scope="col">นามสกุล</th>
+            <th scope="col">Confirm By</th>
+            <th scope="col">Interpretation</th>
+            <th scope="col">Comment/Suggestion</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for row in datas %}
+           <tr>
+               <td scope="row">{{row.0}}</td>
+               <td scope="row">{{row.1}}</td>
+               <td scope="row">{{row.2}}</td>
+               <td scope="row">{{row.3}}</td>
+               <td scope="row">{{row.4}}</td>
+
+           </tr>
+           {% endfor %} 
+   
+        </tbody>
+       </table>
+
+</div>   
+</body>
+</html>-->
