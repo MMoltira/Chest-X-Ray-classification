@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CXR classfication</title>
+    <link rel="icon" type="image/webp" href="{{ url_for('static',    filename='NeRV_files/chest-x-ray-line-filled-icon-vector.webp')}}"/>
+    <link rel="stylesheet" href="{{ url_for('static',    filename='NeRV_files/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static',    filename='NeRV_files/codemirror.min.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static',    filename='NeRV_files/app.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static',    filename='NeRV_files/bootstrap.min.css')}}" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .mySlides {
+            display: none
+        }
+
+        .w3-left,
+        .w3-right,
+        .w3-badge {
+            cursor: pointer
+        }
+
+        .w3-badge {
+            height: 13px;
+            width: 13px;
+            padding: 0
+        }
+
+        .row h1 span {
+	color: crimson;
+}
+
+.brand h1 {
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: rgb(2, 2, 2);
+}
+.brand h1 span {
+	color: crimson;
+}
+
+    </style>
+</head>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="/index">
+            <h1><span>โ</span>รงพยาบาล <span>ข</span>อนแก่น</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li class="nav-item active"><a class="nav-link" href="/index" data-after="/Home">Home <span class="sr-only"></span></a></li>
+            <li class="nav-item active"><a class="nav-link" href="#services" data-after="/Service">Services</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/about" data-after="/About">About</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/contact" data-after="/Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  </body>
+  <!-- End Header -->
+
+  <body>
+      <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                Chest X-Ray classification <span>for</span> tuberculosis <span>and</span> lung cancer<br />
+                <span>by</span> machine learning algorithm <br />
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://www.facebook.com/ppond23">
+                            Kanyarat Phromsuk
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/moltira.sison">
+                            Moltira Saison
+                        </a>
+                    </li>
+                    <li>
+                        <a href="prem@kku.ac.th"> 
+                            Dr.Prem Junsawang </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://drive.google.com/file/d/1CBzVjulsBA21cIAAJ03HMg4eZR7_T9rT/view">
+                            <img src="/static/NeRV_files/248145076_654552122415768_5009897034601265047_n.png" height="120px" /><br />
+                            <h4><strong>Report</strong></h4>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Example Results: Webpage(Prototype)</h3>
+                <hr>
+                <video id="v0" width="100%" autoplay="" loop="" muted="" controls="">
+                    <source src="/static/NeRV_files/video1.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Abstract</h3>
+                <hr>
+                <img src="/static/NeRV_files/แผนผังระบบ.png" class="img-responsive" alt="overview" /><br />
+                <p class="text-justify">
+                    &emsp;&emsp;&emsp;ในปัจจุบันนี้ การตรวจหาโรคยังเป็นเรื่องปกติสำหรับทุกคน แต่ด้วย
+                    ค่าใช้จ่ายที่ค่อนข้างสูงทำให้หลาย ๆ คนไม่สามารถเข้าถึงการตรวจหาโรคเบื้องต้นได้ 
+                    อีกทั้งในพื้นที่ชนบทยังคงมีเทคโนยีอย่างจำกัด เช่น เครื่อง TC scan ทำให้คุณหมอมีภาระงานที่เพิ่มมากขึ้น
+                    และในการตรวจครั้งหนึ่งก็ใช้เวลาในการรอผลนาน เราจึงได้มีการนำเสนอวิธีการตรวจหาโรคเบื้องต้นด้วยวิธีการเรียนรู้ด้วยเครื่อง ผ่านเว็บแอปพลิเคชันที่สร้างขึ้นเพื่อเป็นตัวช่วยให้คุณหมอสามารถตรวจคัดกรองได้เร็วขึ้น
+                    <br />&emsp;&emsp;&emsp;<strong>สำหรับวิธีการใช้งาน คือ </strong>
+                    <br />&emsp;&emsp;&emsp;1. เข้าสู้หน้าเว็บแอปพลิเคชัน
+                    <br />&emsp;&emsp;&emsp;2. ทำการล็อคอินเพื่อเข้าใช้งาน
+                    <br />&emsp;&emsp;&emsp;3. เลือกรูปภาพที่ต้องการทำนาย
+                    <br />&emsp;&emsp;&emsp;4. เมื่อเว็บแอปพริเคชันแสดงผลการทำนายถือว่าสิ้นสุดการทำงาน
+                    <br />&emsp;&emsp;&emsp;5. แพทย์ผู้เชี่ยวชาญพิจารณาประกอบการตัดสินใจ <br />&emsp;&emsp;&emsp;
+                </p>
+            </div>
+        </div>
+        <!-- Awards!!!!!!!!!! -->
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Awards</h3>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://www.depa.or.th/th/PM-award">
+                            <img src="./NeRV_files/depa.png" height="180px" /><br />
+                            <h4><strong>Digital Youth of the Year 2020</strong></h4>
+                            Prime Minister’s Digital Award 2020 <br />
+                            By DEPA<br /><br />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://sc.kku.ac.th/sciweb/4023.html">
+                            <img src="./NeRV_files/NSC.png" height="180px" /><br />
+                            <h4><strong>1st Runner-Up (NSC2020)</strong></h4>
+                            The Twenty-second National Software Contest Thailand 2020<br />
+                            Category: Data Science and Artificial Intelligence Application <br />
+                            By NSTDA
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        rrrrr
+
+        <div class="w3-content w3-display-container" style="max-width:700px; margin-top: 30px; margin-bottom: 30px;">
+            <img class="mySlides" src="NeRV_files/IMG04.jpg" style="width:100%">
+            <img class="mySlides" src="NeRV_files/IMG03.jpg" style="width:100%">
+            <img class="mySlides" src="NeRV_files/IMG05.jpg" style="width:100%">
+            <img class="mySlides" src="NeRV_files/IMG07.jpg" style="width:100%">
+            <img class="mySlides" src="NeRV_files/IMG02.jpg" style="width:100%">
+            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle"
+                style="width:100%">
+                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+            </div>
+        </div>
+        < rrrrr -->
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Presentation Video for Prime Minister's Digital Award 2020</h3>
+                <hr>
+                <div class="text-center">
+                    <div style="position: relative">
+                        <iframe align="center" width="100%" height="422"
+                            src="https://www.youtube-nocookie.com/embed/SznOiUYxk_4" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Presentation Poster for NSC 2020 </h3>
+                <hr>
+                <div class="text-center">
+                    <div style="position: relative">
+                        <img src="./NeRV_files/Poster.png" height="1000px"><br>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>Awards received</h3>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="https://www.depa.or.th/storage/app/media/file/announce-prime-ministers-digital-award-2020.pdf">
+                            <img src="./NeRV_files/depa.png" height="180px" /><br />
+                            <h4><strong>Digital Youth of the Year 2020</strong></h4>
+                            Prime Minister’s Digital Award 2020 <br />
+                            By DEPA<br /><br />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://sc2.kku.ac.th/stat/statweb/index.php/component/k2/item/525-news8-9-63">
+                            <img src="./NeRV_files/NSC.png" height="180px" /><br />
+                            <h4><strong>1st Runner-Up (NSC2020)</strong></h4>
+                            The Twenty-second National Software Contest Thailand 2020<br />
+                            Category: Data Science and Artificial Intelligence Application <br />
+                            By NSTDA
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div> -->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <br />
+                The website template was borrowed from
+                <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-white";
+        }
+
+    </script>
+</body>
+
+</html>
