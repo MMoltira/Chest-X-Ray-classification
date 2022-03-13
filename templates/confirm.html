@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',    filename='CSS/style.css') }}">
+  <title>ระบบตรวจสอบ</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="/index">
+            <h1><span>โ</span>รงพยาบาล <span>ข</span>อนแก่น</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li class="nav-item active"><a class="nav-link" href="/index" data-after="/Home">Home <span class="sr-only"></span></a></li>
+            <li class="nav-item active"><a class="nav-link" href="#services" data-after="/Service">Services</a></li>
+            <li class="nav-item active"><a class="nav-link" href="about" data-after="/About">About</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/contact" data-after="/Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+<body>
+  <section id="confirm">
+    <div class="confirm container">
+      <div class="service-top">
+<h1 class="section-title">Confirm<span> and </span> Submit</h1>
+      </div>
+      <form action="{{ url_for('home')}}" method="post">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="fname" placeholder="firstname">
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lname" placeholder="lastname">
+  <form action="{{ url_for('home')}}" method="post">
+            
+    <p> Confirm By :  </p>
+<input type="radio" id="html" name="fav_language" value="Radislogist">
+<label for="html">Radislogist</label><br>
+<input type="radio" id="css" name="fav_language" value="Internal medicine">
+<label for="html">Internal medicine</label><br>
+<input type="radio" id="javascript" name="fav_language" value="Pulmonologist">
+<label for="html">Pulmonologist</label><br>
+
+
+<p> Interpretation :</p>
+<input type="radio" id="html" name="fav_inter" value="Normal">
+<label for="html">Normal</label><br>
+<input type="radio" id="css" name="fav_inter" value="Favor CA lung">
+<label for="html">Favor CA lung</label><br>
+<input type="radio" id="css" name="fav_inter" value="Favor TB">
+<label for="html">Favor TB</label><br>
+<input type="radio" id="css" name="fav_inter" value="Other">
+<label for="html">Other
+    </label>
+<br>
+
+<p> Comment/Suggestion :</p>  
+<input type="checkbox" id="javascript" name="fav_com" value="CT chest with contrast">
+<label for="html">CT chest with contrast</label><br>
+<input type="checkbox" id="html" name="fav_com" value="Sputum for AFB, PCR, TB, TB culture">
+<label for="html">RSputum for AFB, PCR, TB, TB culture</label><br>
+<input type="checkbox" id="css" name="fav_com" value="Bronchoswpe">
+<label for="html">Bronchoswpe</label><br>
+<input type="checkbox" id="javascript" name="fav_com" value="Refer to specialist">
+<label for="html">Refer to specialist</label><br>
+<input type="checkbox" id="javascript" name="fav_com" value="กลับบ้านรักษาตามอาการ">
+<label for="html">กลับบ้านรักษาตามอาการ</label><br>
+<input type="checkbox" id="javascript" name="fav_com" value="No comment">
+<label for="html">No comment</label><br>
+<button type="submit">submit</button>
+</form>
+</div>
+</section>
+    </body>
+</html>
+
+<!--<p> Flask is Fun </p>
+<h2 style="color: red;"> Hollo, </h2>
+<h3> {{2**5}}</h3>
+<h3 style="color: rgb(37, 164, 202);">{{name}}</h3>
+
+<form action="{{ url_for('home')}}" method="post">
+    <label for="firstname">First Name:</label>
+    <input type="text" id="firstname" name="fname" placeholder="firstname">
+    <label for="lastname">Last Name:</label>
+    <input type="text" id="lastname" name="lname" placeholder="lastname">
+    <button type="submit">Login</button>
+  </form>
+
+  <p> เทอมนี้จะได้เกรดอะไร </p>-->
