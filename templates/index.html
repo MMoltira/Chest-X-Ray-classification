@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',    filename='CSS/style.css') }}">
+  <title>ระบบตรวจสอบ</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="/index">
+            <h1><span>โ</span>รงพยาบาล <span>ข</span>อนแก่น</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li class="nav-item active"><a class="nav-link" href="/index" data-after="/Home">Home <span class="sr-only"></span></a></li>
+            <li class="nav-item active"><a class="nav-link" href="#services" data-after="/Service">Services</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/about" data-after="/About">About</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/contact" data-after="/Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div>
+        <h2>ยินดีต้อนรับเข้าสู่เว็บไซต์ <span></span></h2>
+        <h2>We are here for your care 24/7. <span></span></h2>
+        <a href="/login" type="button" class="cta">ลงชื่อเข้าใช้</a>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>S</span>haif <span>A</span>rfan</h1>
+      </div>
+      <h2>Your Complete Web Solution</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/twitter.png" /></a>
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/behance.png" /></a>
+        </div>
+      </div>
+      <p>Copyright © 2022 Kanyarat.P, Moltira.S. All rights reserved</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+  <script src="./app.js"></script>
+  {% block content %}
+    {% endblock %}
+</body>
+
+</html>
