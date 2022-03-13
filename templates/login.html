@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static',    filename='CSS/style.css') }}">
+  <title>ระบบตรวจสอบ</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="/index">
+            <h1><span>โ</span>รงพยาบาล <span>ข</span>อนแก่น</h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li class="nav-item active"><a class="nav-link" href="/index" data-after="/Home">Home <span class="sr-only"></span></a></li>
+            <li class="nav-item active"><a class="nav-link" href="#services" data-after="/Service">Services</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/about" data-after="/About">About</a></li>
+            <li class="nav-item active"><a class="nav-link" href="/contact" data-after="/Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+            <section id="footer">
+                <div class="footer container">
+                    <div class="foot-1">
+                      <div class="form-group">
+                    <div style="padding:10px; border: 1px solid #eeeeee; background-color: #FAFFF5;">
+                        <form action="{{url_for('select')}}" enctype = "multipart/form-data" name="frmLogin" method="post">
+                          ล็อกอินเข้าสู่ระบบ...<br>
+                          <table border="0" cellspacing="10" cellpadding="5" style="width: 300px">
+                            <tbody>
+                              <tr>
+                                <td> ชื่อผู้ใช้</td>
+                                <td>
+                                  <label for="fname"></label>
+                                        <input name="fname" class="form-control" type="text" placeholder="ชื่อจริง">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td> นามสกุล</td>
+                                <td>
+                                  <label for="lname"></label>
+                                        <input name="lname" class="form-control" type="text"  placeholder="นามสกุล">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td> </td>
+                                <td>  
+                                  <p></p>
+                                  <button href="/select" target="_blank" type="submit" class="pull-right btn btn-primary"> ยืนยัน</button>
+                                  
+                          
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </form>
+                        </div>
+                        </div>
+                      </div>
+                  <h2>Login with</h2>
+                  <div class="social-icon">
+                    <div class="social-item">
+                      <a href="https://www.facebook.com/"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a>
+                    </div>
+                    <div class="social-item">
+                      <a href="https://shorturl.asia/Tg4Na"><img src="https://img.icons8.com/bubbles/50/000000/line-me.png" /></a>
+                    </div>
+                    <div class="social-item">
+                      <a href="https://twitter.com/"><img src="https://img.icons8.com/bubbles/100/000000/twitter.png" /></a>
+                    </div>
+                    <div class="social-item">
+                      <a href="https://mail.google.com/"><img src="https://img.icons8.com/bubbles/100/000000/gmail.png" /></a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+    </body>
+</html>
