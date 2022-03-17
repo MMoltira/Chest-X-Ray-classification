@@ -8,6 +8,7 @@ Models for download : https://drive.google.com/file/d/1vN9TFfPlJ39znQgh1RK0NzV37
 2. conda install opencv
 3. pip install Flask
 4. pip install tensorflow
+5. pip install pandas
 
 ## How to run this project
 1. Install important packages into the terminal.
