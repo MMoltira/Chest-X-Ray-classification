@@ -4,11 +4,12 @@ Webpage : https://mmoltira.github.io/CXR-classification/
 Models for download : https://drive.google.com/file/d/1vN9TFfPlJ39znQgh1RK0NzV37PLYoN2b/view?usp=sharing
 
 ## Installation
-1. pip install numpy
-2. conda install opencv
-3. pip install Flask
-4. pip install tensorflow
-5. pip install pandas
+
+ 1. pip install numpy
+ 2. conda install opencv
+ 3. pip install Flask
+ 4. pip install tensorflow
+ 5. pip install pandas
 
 ## How to run this project
 1. Install important packages into the terminal.
