@@ -5,11 +5,11 @@ Models for download : https://drive.google.com/file/d/1vN9TFfPlJ39znQgh1RK0NzV37
 
 ## Installation
 
- 1. pip install numpy
- 2. conda install opencv
- 3. pip install Flask
- 4. pip install tensorflow
- 5. pip install pandas
+   1. pip install numpy
+   2. conda install opencv
+   3. pip install Flask
+   4. pip install tensorflow
+   5. pip install pandas
 
 ## How to run this project
 1. Install important packages into the terminal.
@@ -18,9 +18,10 @@ Models for download : https://drive.google.com/file/d/1vN9TFfPlJ39znQgh1RK0NzV37
 4. Copy http://127.0.0.1:5000/ and paste it on the web page followed by the route of the page you want to display, e.g. http://127.0.0.1:5000/index.
 
 ## App web page example
-![แผนภาพ](https://user-images.githubusercontent.com/68935366/160512936-5f3c0090-9043-4c02-b71c-27d40f9b29e3.png)
+![system](https://user-images.githubusercontent.com/68935366/162600708-55053fa1-2023-422a-850a-72a479ea6f0f.png)
 
-https://user-images.githubusercontent.com/68935366/158717721-11bf37f0-d0ba-472c-b32b-54d2f7a1d66e.mp4
+
+https://user-images.githubusercontent.com/68935366/162600725-27ab5617-0ca4-44ed-b157-d279d4334a9b.mp4
 
 
 
