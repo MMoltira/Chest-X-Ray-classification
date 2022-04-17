@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Python Flask Upload multiple images and display multiple images uploaded</title>
+</head>
+<body>
+<div style="padding:20px;">
+<!-- <h2>Python Flask Upload multiple images and display multiple images uploaded</h2> -->
+<p>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</p>
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+        <p>
+            <input type="file" name="files[]" multiple="true" autocomplete="off" required>
+        </p>
+    </dl>
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>
+ 
+{% if filenames %}
+            <img width="500" src="{{image_predict}}"> 
+            <h3> Normal:  <i> {{result[0][0]}} </i></h3>
+            <h3> Tuberculosis: <i> {{result[0][1]}} </i></h3>
+        </div>
+{% endif %}
+</div>
+</body>
+</html>

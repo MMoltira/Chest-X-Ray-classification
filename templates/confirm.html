@@ -14,9 +14,6 @@
     <div class="header container">
       <div class="nav-bar">
         <div class="brand">
-          <a href="/index">
-            <h1><span>โ</span>รงพยาบาล <span>ข</span>อนแก่น</h1>
-          </a>
         </div>
         <div class="nav-list">
           <div class="hamburger">
@@ -39,16 +36,11 @@
       <div class="service-top">
 <h1 class="section-title">Confirm<span> and </span> Submit</h1>
       </div>
-      <form action="{{ url_for('home')}}" method="post">
-        <label for="firstname">First Name:</label>
-        <input type="text" id="firstname" name="fname" placeholder="firstname">
-        <label for="lastname">Last Name:</label>
-        <input type="text" id="lastname" name="lname" placeholder="lastname">
   <form action="{{ url_for('home')}}" method="post">
             
     <p> Confirm By :  </p>
 <input type="radio" id="html" name="fav_language" value="Radislogist">
-<label for="html">Radislogist</label><br>
+<label for="html">Radiologist</label><br>
 <input type="radio" id="css" name="fav_language" value="Internal medicine">
 <label for="html">Internal medicine</label><br>
 <input type="radio" id="javascript" name="fav_language" value="Pulmonologist">
@@ -71,15 +63,17 @@
 <input type="checkbox" id="javascript" name="fav_com" value="CT chest with contrast">
 <label for="html">CT chest with contrast</label><br>
 <input type="checkbox" id="html" name="fav_com" value="Sputum for AFB, PCR, TB, TB culture">
-<label for="html">RSputum for AFB, PCR, TB, TB culture</label><br>
+<label for="html">Sputum for AFB, PCR for TB, TB culture</label><br>
 <input type="checkbox" id="css" name="fav_com" value="Bronchoswpe">
-<label for="html">Bronchoswpe</label><br>
+<label for="html">Bronchoscope</label><br>
 <input type="checkbox" id="javascript" name="fav_com" value="Refer to specialist">
 <label for="html">Refer to specialist</label><br>
 <input type="checkbox" id="javascript" name="fav_com" value="กลับบ้านรักษาตามอาการ">
 <label for="html">กลับบ้านรักษาตามอาการ</label><br>
 <input type="checkbox" id="javascript" name="fav_com" value="No comment">
 <label for="html">No comment</label><br>
+<input type="checkbox" id="javascript" name="fav_com" value="Serial CXR for follow up">
+<label for="html">Serial CXR for follow up</label><br>
 <button type="submit">submit</button>
 </form>
 </div>

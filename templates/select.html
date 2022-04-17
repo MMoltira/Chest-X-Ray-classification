@@ -15,9 +15,6 @@
     <div class="header container">
       <div class="nav-bar">
         <div class="brand">
-          <a href="/index">
-            <h1><span>โ</span>รงพยาบาล <span>ข</span>อนแก่น</h1>
-          </a>
         </div>
         <div class="nav-list">
           <div class="hamburger">
@@ -57,16 +54,7 @@
           {% endif %}
         {% endwith %}
     </p>
-    {% if filename %}
-            <!-- <img src="/static/UPLOAD_IMAGE/{{filename}}" height="400px" width="400px"> -->
-            <img src="{{ url_for('display_image', filename=filename) }}" height="50px" width="50px">
-            <h3> Normal:  <i> {{result[0][1]}} </i></h3>
-            <h3> Lung cancer: <i> {{result[0][0]}} </i></h3>
-            <h3> Tuberculosis: <i>{{result[0][2]}}</i></h3>
-            <form action="/confirm">
-            <button type="submit">Next</button>
-          </form>
-    {% endif %}
+
             
                       
                       
@@ -79,7 +67,6 @@
         </dl>
         <p>
             <button type="submit" class="btn btn-info">submit</button>
-            <button type="reset" class="btn btn-info">cancel</button>
             </p>    
     </form>
     
