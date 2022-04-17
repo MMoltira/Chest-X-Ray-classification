@@ -4,7 +4,7 @@ Webpage : https://mmoltira.github.io/CXR-classification/
 Models for download : https://drive.google.com/file/d/1vN9TFfPlJ39znQgh1RK0NzV37PLYoN2b/view?usp=sharing
 
 ## Installation
-
+   
    1. pip install numpy
    2. conda install opencv
    3. pip install Flask
