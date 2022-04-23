@@ -19,10 +19,9 @@ Models for download : https://drive.google.com/file/d/1vN9TFfPlJ39znQgh1RK0NzV37
 5. Copy http://127.0.0.1:5000/ and paste it on the web page followed by the route of the page you want to display, e.g. http://127.0.0.1:5000/index.
 
 ## App web page example
-![system](https://user-images.githubusercontent.com/68935366/162600708-55053fa1-2023-422a-850a-72a479ea6f0f.png)
+![แผนผังระบบ (2)](https://user-images.githubusercontent.com/68935366/164885293-c3ae6d5b-3edd-4e50-a4a6-e25680bbac9e.png)
 
 
-https://user-images.githubusercontent.com/68935366/162600725-27ab5617-0ca4-44ed-b157-d279d4334a9b.mp4
-
+https://user-images.githubusercontent.com/68935366/164885853-a8ab7517-0257-403c-8845-1f2b9a7280cf.mp4
 
 
