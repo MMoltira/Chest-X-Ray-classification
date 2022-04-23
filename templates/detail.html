@@ -70,19 +70,6 @@ td, th {
           <img src="{{ url_for('display_image', filename=filename) }}" alt="img">
         {% endif %}
           </div>
-          <div class="project-img">
-            {% if filename %}
-            <img src="/static/images/scor.png" alt="img">
-            {% endif %}
-        </div>
-      </div>
-        <div class="project-item">
-          <div class="project-info">
-            <h1>Score CAM</h1>
-            <h3> เป็นบริเวณจุดที่โมเดลใช้ในการตัดสินใจ
-              เพื่อเพิ่มความมั่นใจให้แก่ผู้ใช้งานประกอบการตัดสินใจมากยิ่งขึ้น
-            </h3>
-          </div>
           <div class="project-info">
             <h1>Image Input</h1>
             <table>
@@ -92,15 +79,15 @@ td, th {
               </tr>
               <tr>
                 <td>Normal</td>
-                <td>{{result[0][1]}}</td>
+                <td>{{result1}}</td>
               </tr>
               <tr>
                 <td>Lung cancer</td>
-                <td>{{result[0][0]}}</td>
+                <td>{{result2}}</td>
               </tr>
               <tr>
                 <td>Tuberculosis</td>
-                <td>{{result[0][2]}}</td>
+                <td>{{result3}}</td>
               </tr>
             </table>
 
