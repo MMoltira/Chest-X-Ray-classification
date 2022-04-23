@@ -257,13 +257,16 @@ def Preupload():
    # relu = ScoreCam(  model  , img_array , layer_name = 'relu' ,  max_N=-1)
 
    # scorecam_image = superimpose(  original_img_path = image_predict  ,  cam= relu , ) 
+   result1 = np.round((result[0][1])*100, 3)
+   result2 = np.round((result[0][0])*100, 3)
+   result3 = np.round((result[0][2])*100, 3)
 
-   print (f' {image_predict} = Normal:  {result[0][1]}   Lung cancer: {result[0][0]}  Tuberculosis: {result[0][2]} ')
+   print (f' {image_predict} = Normal:  {result1}   Lung cancer: {result2}  Tuberculosis: {result3} ')
    # print(f' output form superimpose.shape {scorecam_image.shape} ')
 
    if request.method == "POST":
        # getting input with name = lname in HTML form 
-      resp=make_response(render_template("detail.html", name = f"{filename}",result=result, filename=filename))
+      resp=make_response(render_template("detail.html", name = f"{filename}",result1=result1, result2=result2, result3=result3, filename=filename))
       resp.set_cookie("file", filename)
       return resp
  
